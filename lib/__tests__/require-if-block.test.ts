@@ -6,7 +6,14 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run("require-if-block", requireIfBlock, {
-  valid: [],
+  valid: [
+    {
+      code: `
+      if (true) {
+        console.log("true");
+      }`,
+    },
+  ],
   invalid: [
     {
       code: `if (true) console.log("true");`,
